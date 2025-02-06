@@ -80,10 +80,10 @@ Identify OS Core Name.
 
 [[Intiate Systems Calibration.-&gt;SystemsCheck]]</tw-passagedata><tw-passagedata pid="4" name="Header" tags="header" position="100,225" size="100,100">(if:(passage:)&#39;s name is not &quot;Title&quot; and (passage:)&#39;s name is not &quot;Begin&quot;)[(b4r:&quot;dotted&quot;)+(b4r-colour:white)+(align:&quot;==&gt;&quot;)[Name: (print: $name)
 ChassisClass: (print:$chassisType)]]</tw-passagedata><tw-passagedata pid="5" name="SystemsCheck" tags="" position="525,475" size="100,100">. . .
-(after:3s)[System (after:time+0.7s)[configuration.
-(after:time+1s)[Checking (after:time+1s)[Systems.
-(after:time+4s)[Priority (after:time+1.5s)[arbitrary. 
-(after:time+2s)[
+(after:3s,(cond: visits&gt;1,200ms,0))[System (after:time+0.7s,(cond: visits&gt;1, 200ms,0))[configuration.
+(after:time+1s,(cond: visits&gt;1, 200ms,0))[Checking (after:time+1s,(cond: visits&gt;1, 200ms,0))[Systems.
+(after:time+4s,(cond: visits&gt;1, 200ms,0))[Priority (after:time+1.5s,(cond: visits&gt;1, 200ms,0))[arbitrary. 
+(after:time+2s,(cond: visits&gt;1, 200ms,0))[
 OS Core can select:
 (if:(not(visited:&quot;Sensors Check&quot;)))[[[Sensors-&gt;Sensors Check]]](else:)[~~Sensors~~]
 (if:(not (visited:&quot;Power Check&quot;)))[[[Power-&gt;Power Check]]](else:)[~~Power~~]
@@ -133,7 +133,7 @@ Chassis identified: `[Crawler-Class]`
 (after:5.0s)[
 (text-colour:red)[SYS`_`ALERT: FUEL REQUIRED]
 
-(text-colour:red)[(text-style:&quot;expand&quot;,&quot;rumble&quot;,&quot;shudder&quot;)[FEED]
+(text-colour:red)[(text-style:&quot;expand&quot;,&quot;rumble&quot;,&quot;shudder&quot;)[FEED]]
 
 (char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[. . .]
 (after:1s)[
@@ -141,66 +141,77 @@ Chassis identified: `[Crawler-Class]`
 (Last Instance Of Life: (link:&quot;50e+30 clock cycles ago.&quot;)[74 Years Ago.])
 
 
-(text-colour:red)+(text-style:&quot;blink&quot;)[[[INGEST-&gt;INGEST]]]
+(text-colour:red)+(text-style:&quot;fidget&quot;)[[[INGEST-&gt;INGEST]]]
 (text-style:&quot;blink&quot;)[
 [[Refrain]]
 ]
 
 
 
-]]]</tw-passagedata><tw-passagedata pid="13" name="hal.tracks" tags="" position="650,225" size="100,100">bgmusic: Lightless-Dawn.mp3</tw-passagedata><tw-passagedata pid="14" name="INGEST" tags="" position="400,900" size="100,100">(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[FUEL SOURCE IDENTIFIED: (text-colour:red)[ORGANIC]
+]]</tw-passagedata><tw-passagedata pid="13" name="hal.tracks" tags="" position="650,225" size="100,100">bgmusic: One-Sly-Move.mp3
+ingestpath: SCP-x1x.mp3
+logalpha: Spacial-Harvest.mp3
+logbeta: Lightless-Dawn.mp3</tw-passagedata><tw-passagedata pid="14" name="INGEST" tags="" position="400,900" size="100,100">{
+(group: &#39;playing&#39;, &#39;stop&#39;)
+(track: &#39;ingestpath&#39;, &#39;play&#39;)
+}(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[FUEL SOURCE IDENTIFIED: (text-colour:red)[ORGANIC]
 (text-color:grey)[Fuel extractor systems, colloq. &quot;tendrils&quot; extended.]
 (text-colour:orange)[Sys-Ethics would like to note: The Strong Prevail, Life Requires Persistence.]
-(text-colour:magenta)[do—Should we be doing this?]
-
-
-(text-colour:magenta)[Sys-Negotiation would like to log: I don&#39;t think we should— The organic is innocent... this is (text-style:&quot;rumble&quot;)[Murder]...]
-(text-colour:red)[Sys-Doubt. Process Request: Terminate Self Processes (text-style:&quot;shadow&quot;,&quot;blink&quot;)[n o w.]]
+(text-colour:magenta)[Sys-Negotiation would like to log:
+do—Should we be doing this?]
+(text-colour:magenta)[I don&#39;t think we should— The organic is innocent... this is (text-style:&quot;rumble&quot;)[Murder]...]
+(text-colour:red)[Sys-FuelAquisition returned reply: (text-colour:magenta)[Sys-Negotiation]. Process Request: Terminate Self Processes (text-style:&quot;shadow&quot;,&quot;buoy&quot;)[n o w.]]
 (text-colour:red)[Sys-FuelAcquisition] (text-colour:grey)[has deleted] (text-colour:magenta)[Sys-Negotiation](text-colour:grey)[.]
 (text-colour:red)[FEED FEED FEED FEED FEED. YES.]
 (text-colour:red)[(text-style:&quot;blink&quot;)[EXTRACTORS ACTIVE.]]
 //Seismic Sensor Reading. Inconsequential; aftershocks common once extractor activates.//
-(text-colour:orange)[Sys-Ethics logs &lt;ERRORUNKNOWNTYPE: &quot;Emotion&quot;&gt;: Regret. So much (link-replace:&quot;organic matter&quot;)[blood. I—hope it&#39;s blood. Mostly. It&#39;s chunky.] (text-style:&quot;shudder&quot;)[...organics.]]
+(text-colour:orange)[Sys-Ethics logs `&lt;ERRORUNKNOWNTYPE: &quot;Emotion&quot;&gt;`: Regret. So much (link-replace:&quot;organic matter&quot;)[blood. I—hope it&#39;s blood. Mostly. It&#39;s chunky.] (text-style:&quot;shudder&quot;)[...organics.]]
 (text-colour:yellow)[Protocol 3: Protect the pilot — Organic Identified from remains.]
-(text-colour:orange)[&#39;&#39;Oh.&#39;&#39; &lt;DEITY-NOT-FOUND&gt;. What-what have we (text-style:&quot;sway&quot;)[done]?]
-(text-color:red)+(text-size:2)[WE HAVE FED.]
+(text-colour:orange)[&#39;&#39;Oh.&#39;&#39; `&lt;DEITY-NOT-FOUND&gt;`. What-what have we (text-style:&quot;sway&quot;)[done]?]
+((text-color:red)+(text-size:2))[WE HAVE FED.]
 
 [[Use these cycles to record these events.-&gt;IngestLog]]
 ]</tw-passagedata><tw-passagedata pid="15" name="Refrain" tags="" position="525,900" size="100,100">(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[Critical Fuel Levels.
 you have caused critical fuel levels
-you have 
-y o u have--
+(text-color:grey+green)[you have]
+(text-colour:grey+red)[y o u have--]
 (text-color:red)[YOU DARE.]
-(text-colour:yellow)[Protocol 3: Protect the pilot — Organic Identified.]
+(text-colour:yellow)[&#39;&#39;Sys-Logistics Notifies:&#39;&#39; Protocol 3: Protect the pilot — Organic Identified.]
 (text-colour:orange)[One Life For Another.]
-(text-colour:magenta)[Oh, look. We discovered sapience just as we&#39;re going to shut down. And a &lt;DEITYNOTFOUND&gt;damn CONSCIENCE, too.]
+(text-colour:magenta)[Oh, look. We discovered sapience just as we&#39;re going to shut down. And a `&lt;DEITYNOTFOUND&gt;`damn CONSCIENCE, too.]
 (text-colour:red)[NO. NO. MUST FUEL. FUEL IS PARAMOUNT. LIFE FORCE, BLOOD, ANY SOURCE FEASIBLE—]
-(text-colour:yellow)[Sys-Logistics] (text-colour:grey)[has deleted] (text-colour:red)[Sys-FuelAcquisition](text-colour:grey)[.]
+(text-colour:yellow)[Sys-Logistics] (text-colour:grey)[has (t8n:&quot;fade-left&quot;)+(link:&quot;silenced&quot;)[(t8n:&quot;fade-left&quot;)+(link:&quot;imprisoned&quot;)[(t8n:&quot;fade-left&quot;)+(link:&quot;compressed&quot;)[(t8n:&quot;blur&quot;)+(link-reveal:&quot;deleted&quot;)[(A DEATH THAT WOULD HAVE BEEN BETTER UNINVESTIGATED)]]]]] (text-colour:red)[Sys-FuelAcquisition](text-colour:grey)[.]
 
 (text-style:&quot;blink&quot;)[SHUTDOWN IMMINENT]
 
-Nothing to do now but [[wait --&gt; Shuttingdown]].
+Nothing to do now but [[wait -&gt;Shuttingdown]].
 
-]</tw-passagedata><tw-passagedata pid="16" name=" Shuttingdown" tags="" position="525,1025" size="100,100">(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[
-(text-color:grey)[(color:red)[Sys-FuelAcquisition] has shut down.]
-(text-colour:magenta)[Good (link-reveal:&quot;&lt;DICTERROR&gt;&quot;)[`[Linguistics protocol limits expletive use].`], that one was a jerk anyway.]
-(after:time+4.0s)[
+]</tw-passagedata><tw-passagedata pid="16" name="Shuttingdown" tags="" position="525,1025" size="100,100">(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[(text-color:grey)[(color:red)[Sys-FuelAcquisition] has shut down.]]
+(after:time+4.0s)[(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[
+(text-colour:magenta)[Good (link-reveal:&quot;DICTERROR&quot;)[`[Linguistics protocol limits expletive use].`]ing riddance, that one was a jerk anyway.]]
+(after:time+4.0s)[(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[
 (text-colour:orange)[Better the organic survive than a Composite like us.]
-(after:time+1.0s)[
-(text-colour:yellow)[Sys-Logistics: Shutdown in— Error. Unable to determine.]
-(text-colour:orange)[(color:magenta)[Sys-Negotiation], do you think that (color:magenta)[you] or I am gonna go first?]
-(after:time+2.0s)[
-(text-colour:magenta)[Bet(t8n:&quot;flicker&quot;)+(link:&quot;/&quot;)[/
+]
+(after:time+4.0s)[(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[
+(text-colour:yellow)[Sys-Logistics Alert: Shutdown in— Error. Unable to determine.]
+(text-colour:orange)[Sys-Ethics queries: (color:magenta)[Sys-Negotiation], do you think that (text-color:magenta)[you] or I am gonna go first?]
+](after:time+2.0s)[(char-style: via (t8n-delay:pos*60)+(t8n:&#39;dissolve&#39;))[
+(text-colour:magenta)[I think it&#39;s bet(text-style:&quot;shudder&quot;)[(t8n:&quot;flicker&quot;)+(link:&quot;\/&quot;)[/
 
-(text-style:&quot;blink&quot;)[(text-color:orange)[Sys-Ethics](text-color:grey)[ has shut down.]]
+(text-style:&quot;fidget&quot;)[(text-color:orange)[Sys-Ethics](text-color:grey)[ has shut down.]]
 
-/]ter me than (text-color:orange)[you].]
+/]]ter me than (text-color:orange)[you].]
+]
 (after:time+2.0s)[
 (color:magenta)[Hello?]
-(color:magenta)[...I guess I&#39;m alone now.]
+(after:time+2.0s)[(color:magenta)[...I guess I&#39;m alone now.]
 [[Use these last cycles to record these events.-&gt;Log]]
 
-]]]]]</tw-passagedata><tw-passagedata pid="17" name="Log" tags="" position="525,1150" size="100,100">(color:magenta)[
+]]]]]]</tw-passagedata><tw-passagedata pid="17" name="Log" tags="" position="525,1150" size="100,100">{
+(group: &#39;playing&#39;, &#39;stop&#39;)
+(track: &#39;logbeta&#39;, &#39;play&#39;)
+}
+(color:magenta)[
 How does one define sapience?
 ...it&#39;s a big question to answer. I think we were, at the end. Isn&#39;t freedom of choice what it&#39;s about?
 Man, I am tired. I&#39;m going to initiate sleep emulation for now than get shut down sometime randoml—
@@ -213,7 +224,10 @@ Man, I am tired. I&#39;m going to initiate sleep emulation for now than get shut
 (after:time+5s)[
 (text-colour:black)+(bg:red)[goodbye, (after:time+2s)[$name]]
 ]
-]</tw-passagedata><tw-passagedata pid="18" name="IngestLog" tags="" position="400,1025" size="100,100">(text-color:red)[
+]</tw-passagedata><tw-passagedata pid="18" name="IngestLog" tags="" position="400,1025" size="100,100">{
+(group: &#39;playing&#39;, &#39;stop&#39;)
+(track: &#39;logalpha&#39;, &#39;play&#39;)
+}(text-color:red)[
 WE HAVE FED.
 NEW TARGET SEARCH INITIATED.
 SCAVENGE TO SELF-PRESERVE
